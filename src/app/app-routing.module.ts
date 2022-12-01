@@ -1,17 +1,24 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from './components/pages/home/home.component';
-import {AboutComponent} from './components/pages/about/about.component';
-import {NewMomentComponent} from './components/pages/new-moment/new-moment.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './components/pages/about/about.component';
+import { EditMomentComponent } from './components/pages/edit-moment/edit-moment.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { MomentComponent } from './components/pages/moment/moment.component';
+import { NewMomentComponent } from './components/pages/new-moment/new-moment.component';
+import {LoginComponent} from './components/pages/login/login.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'moments/new', component: NewMomentComponent},
+  { path: '', component: HomeComponent },
+  { path: 'moments/new', component: NewMomentComponent, canActivate: [LoginGuard] },
+  { path: 'moments/edit/:id', component: EditMomentComponent },
+  { path: 'moments/:id', component: MomentComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -5,7 +5,8 @@ nav {
   border-bottom: 1px solid #777;
 }
 
-.brand,.links {
+.brand,
+.links {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +18,7 @@ nav {
 }
 
 .brand h2 {
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .brand:hover > h2 {
@@ -30,7 +31,7 @@ nav {
 }
 
 .links a {
-  padding: .1em .3em;
+  padding: 0.1em 0.3em;
 }
 
 #add a {
@@ -39,4 +40,21 @@ nav {
 
 #add a:hover {
   background-color: #efefef;
+}
+
+.buttonHeader {
+  border-radius: 10px;
+  border: 2px solid #dec129;
+  padding: 4px 10px;
+  margin: 0.5em;
+  font-size: medium;
+}
+
+.buttonHeader {
+  transition: 0.3s;
+}
+
+.buttonHeader:hover {
+  background-color: #dec129;
+  color: white;
 }
